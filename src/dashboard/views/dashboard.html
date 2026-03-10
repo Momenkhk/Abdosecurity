@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>لوحة الأمان الاحترافية</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Abdo Security</h2>
+      <nav>
+        <a class="active">نظرة عامة</a>
+        <a>أنظمة الحماية</a>
+        <a>مكافحة التخريب</a>
+        <a>مكافحة السبام</a>
+        <a>حماية الرايد</a>
+        <a>القائمة البيضاء</a>
+        <a>السجلات</a>
+        <a>التحقق</a>
+        <a>النسخ الاحتياطية</a>
+        <a>إحصائيات السيرفر</a>
+        <a>الإعدادات</a>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <header class="topbar">
+        <span>الحالة الأمنية المباشرة</span>
+        <strong id="statusBadge">ONLINE</strong>
+      </header>
+
+      <div class="grid cards">
+        <article class="card"><h3>حالة الأمان</h3><p id="securityStatus">...</p></article>
+        <article class="card"><h3>عدد الأعضاء</h3><p id="totalMembers">...</p></article>
+        <article class="card"><h3>حالة البوت</h3><p id="botStatus">...</p></article>
+        <article class="card"><h3>الحمايات المفعلة</h3><p id="enabledProtections">...</p></article>
+      </div>
+
+      <section class="card"><h3>أنظمة الحماية</h3><div class="toggle-grid" id="systemsToggles"></div></section>
+      <section class="card"><h3>إعدادات مكافحة التخريب</h3><div class="limits" id="nukeControls"></div></section>
+      <section class="card"><h3>إعدادات مكافحة السبام</h3><div class="limits" id="spamControls"></div></section>
+      <section class="card"><h3>إعدادات حماية الرايد</h3><div class="limits" id="raidControls"></div></section>
+      <section class="card"><h3>إعدادات التحقق</h3><div class="limits" id="verificationControls"></div></section>
+      <section class="card"><h3>السجلات (Log Channels)</h3><div class="limits" id="logsControls"></div></section>
+      <section class="card"><h3>القائمة البيضاء</h3><div class="limits" id="whitelistControls"></div></section>
+
+      <section class="card">
+        <h3>أدوات الطوارئ الأمنية</h3>
+        <div class="quick-actions">
+          <button data-action="lockdown">إغلاق السيرفر</button>
+          <button data-action="panic">وضع الذعر</button>
+          <button data-action="invites">تعطيل الدعوات</button>
+          <button data-action="roles">حذف الرتب المشبوهة</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>التحكم الكامل</h3>
+        <div class="quick-actions">
+          <button id="saveAll">حفظ كل الإعدادات</button>
+          <button id="reloadAll">إعادة تحميل</button>
+          <button id="logoutBtn">تسجيل خروج</button>
+        </div>
+        <p id="saveMessage"></p>
+      </section>
+
+      <section class="card">
+        <h3>التنبيهات الأخيرة</h3>
+        <ul id="alerts"></ul>
+      </section>
+    </section>
+  </div>
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
