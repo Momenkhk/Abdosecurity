@@ -29,6 +29,15 @@ if (raw.dashPassword.length < 12) {
   throw new Error('dashPassword must be at least 12 characters');
 }
 
+
+const prefixes = Array.isArray(raw.prefixes)
+  ? raw.prefixes.filter((v) => typeof v === 'string' && v.trim()).map((v) => v.trim()).slice(0, 5)
+  : ['!'];
+
+const presenceWatching = typeof raw.presenceWatching === 'string' && raw.presenceWatching.trim()
+  ? raw.presenceWatching.trim()
+  : 'Security Commands';
+
 const port = Number(raw.port ?? 3000);
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
   throw new Error('port must be a valid TCP port between 1 and 65535');
@@ -40,5 +49,7 @@ module.exports = {
   dashPassword: raw.dashPassword,
   port,
   sessionTtlMs: Number(raw.sessionTtlMs ?? 1000 * 60 * 45),
-  lockWindowMs: Number(raw.lockWindowMs ?? 1000 * 60 * 15)
+  lockWindowMs: Number(raw.lockWindowMs ?? 1000 * 60 * 15),
+  prefixes,
+  presenceWatching
 };

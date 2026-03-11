@@ -23,7 +23,11 @@ const defaultSettings = {
     antiWebhook: true,
     antiRoleAbuse: true,
     antiChannelAbuse: true,
-    antiPermissionAbuse: true
+    antiPermissionAbuse: true,
+    antiEmoji: true,
+    antiSticker: true,
+    antiUnban: true,
+    antiAdministrator: true
   },
   antiSpam: {
     messageLimit: 6,

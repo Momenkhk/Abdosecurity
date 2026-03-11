@@ -4,5 +4,7 @@
   "dashPassword": "very_strong_password_here",
   "port": 3000,
   "sessionTtlMs": 2700000,
-  "lockWindowMs": 900000
+  "lockWindowMs": 900000,
+  "prefixes": ["!", "."],
+  "presenceWatching": "Security Commands"
 }
