@@ -1,6 +1,10 @@
+const { handleHelpMenu } = require('../interactions/helpMenu');
+
 module.exports = {
   name: 'interactionCreate',
   async execute(interaction) {
+    if (await handleHelpMenu(interaction)) return;
+
     if (!interaction.isChatInputCommand()) return;
 
     const command = interaction.client.commands.get(interaction.commandName);
